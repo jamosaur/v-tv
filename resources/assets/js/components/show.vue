@@ -37,6 +37,7 @@
         }">{{ show.status }}</span>
         <span class="label label-default label-pill" v-for="genre in show.genres">{{ genre }}</span>
         <span class="label label-pill label-primary">{{ show.runtime }} mins</span>
+        <!--<span class="label label-pill label-primary">{{ show.network.name }}</span>-->
         <span class="label label-pill label-primary">{{ network.name }}</span>
     </div>
 
