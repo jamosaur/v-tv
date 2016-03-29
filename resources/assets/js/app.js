@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Resource from 'vue-resource'
 import Router from 'vue-router'
+global.jQuery = require('jquery')
+var $ = global.jQuery
+window.$ = $
+require('../my-ui-kit/js/npm.js')
 
 import app from './components/app.vue'
 import { configRouter } from './routes'

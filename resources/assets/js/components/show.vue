@@ -1,4 +1,5 @@
 <script>
+    import _ from 'underscore';
     export default {
         name: "show",
         data: function () {
@@ -6,7 +7,8 @@
                 show: [],
                 showName: '',
                 network: [],
-                image: []
+                image: [],
+                episodes: []
             }
         },
         methods: {
@@ -17,6 +19,8 @@
                             this.show = data
                             this.network = data.network
                             this.image = data.image
+                            var embedded = data._embedded
+                            this.episodes = _.groupBy(embedded.episodes, 'season')
                         })
             }
         },
@@ -49,7 +53,38 @@
             <img src="{{ image.original }}" alt="{{ show.name }}" class="img-fluid">
         </div>
     </div>
-    <pre>{{ show | json }}</pre>
+
+    <template v-for="season in episodes">
+        <h2 class="display-4">Season {{ $index + 1 }} </h2>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th width="10%"></th>
+                <th>Name</th>
+                <th></th>
+                <th width="10%">Air Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <template v-for="episode in season">
+                <tr>
+                    <td>S{{ ("00" + episode.season).slice(-2) }}E{{ ("00" + episode.number).slice(-2) }}</td>
+                    <td><strong>{{ episode.name }}</strong></td>
+                    <td></td>
+                    <td>{{ episode.airdate }}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img v-if="episode.image" v-bind:src="episode.image.medium" alt="" class="img-fluid">
+                    </td>
+                    <td colspan="3">
+                        {{{ episode.summary }}}
+                    </td>
+                </tr>
+            </template>
+            </tbody>
+        </table>
+    </template>
 </template>
 
 <style>

@@ -12,7 +12,8 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "laravel-elixir-html-minify": "^1.0.1",
-    "laravel-elixir-livereload": "^1.1.4"
+    "laravel-elixir-livereload": "^1.1.4",
+    "tether": "^1.1.1"
   },
   "dependencies": {
     "babel-plugin-transform-runtime": "^6.4.3",
@@ -21,6 +22,7 @@
     "laravel-elixir": "^4.2.0",
     "laravel-elixir-browserify": "^0.8.1",
     "materialize-css": "^0.97.5",
+    "underscore": "^1.8.3",
     "vue": "^1.0.15",
     "vue-hot-reload-api": "^1.2.2",
     "vue-resource": "^0.6.1",
