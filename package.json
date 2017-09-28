@@ -28,6 +28,12 @@
     "vue-resource": "^0.6.1",
     "vue-router": "^0.7.9",
     "vueify": "^8.3.2",
-    "vueify-insert-css": "^1.0.0"
-  }
+    "vueify-insert-css": "^1.0.0",
+    "snyk": "^1.41.1"
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
