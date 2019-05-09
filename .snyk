@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.7.1
+version: v1.13.3
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -58,3 +58,6 @@ patch:
         patched: '2017-09-28T06:48:24.405Z'
     - laravel-elixir > browser-sync > serve-static > send > debug:
         patched: '2017-09-28T06:48:24.405Z'
+  SNYK-JS-AXIOS-174505:
+    - laravel-elixir > browser-sync > localtunnel > axios:
+        patched: '2019-05-09T06:20:03.019Z'
